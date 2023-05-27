@@ -6,7 +6,7 @@
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html"
+    "start": "parcel --no-cache index.html"
   },
   "author": "Ricky Wong",
   "license": "ISC",
