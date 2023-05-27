@@ -1,3 +1,5 @@
+import "hacktimer";
+
 import { HomeStore } from "./models.js";
 import { formatTime } from "../shared/helper.js";
 
