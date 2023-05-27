@@ -1,0 +1,11 @@
+node_modules/
+.parcel-cache/
+.cache
+.next
+dist/
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
