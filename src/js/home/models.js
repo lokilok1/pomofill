@@ -1,7 +1,9 @@
-export class HomeStore extends EventTarget {
+import {DEFAULT_MIN, DEFAULT_SEC} from "../shared/config";
+
+export default class HomeStore extends EventTarget {
   constructor() {
     super();
-    this.initialDuration = 25 * 60;
+    this.initialDuration = DEFAULT_MIN * 60 + DEFAULT_SEC;
     this.counter = this.initialDuration;
     this.timerId = null;
   }
