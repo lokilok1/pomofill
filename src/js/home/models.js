@@ -1,4 +1,4 @@
-import {DEFAULT_MIN, DEFAULT_SEC} from "../shared/config";
+import { DEFAULT_MIN, DEFAULT_SEC } from "../shared/config";
 
 export default class HomeStore extends EventTarget {
   constructor() {
