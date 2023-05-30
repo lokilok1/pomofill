@@ -1,32 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Countdown Timer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-      }
-
-      .timer {
-        font-size: 5rem;
-        margin-bottom: 2rem;
-      }
-
-      .buttons {
-        display: flex;
-        gap: 1rem;
-      }
-    </style>
+    <link rel="stylesheet" href="/src/css/style.css" />
   </head>
   <body>
+    <div class="panel">
+      <h3>PomoFill Countdown Timer - focus on your every minute.⏳⏳</h3>
+      <ul class="nav-bar">
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
     <div class="container">
-      <h1>Countdown Timer</h1>
+      <div class="tab">
+        <button id="pomodoro-session">Pomodoro</button>
+        <button id="short-break">Short Break</button>
+        <button id="long-break">Long Break</button>
+      </div>
       <div class="timer">
         <span id="time"></span>
       </div>

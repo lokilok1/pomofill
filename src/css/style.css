@@ -1,0 +1,114 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F3F3F3;
+    color: #454545;
+}
+
+/*
+| -------------------------------------
+| Panel
+| -------------------------------------
+ */
+
+.panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+.panel h1 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.nav-bar {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-bar > li {
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nav-bar > li a {
+    text-decoration: none;
+    color: #454545;
+}
+
+.nav-bar > li:hover {
+    color: #3F51B5;
+}
+
+.nav-bar > li a:hover {
+    color: #3F51B5;
+}
+
+/*
+| -------------------------------------
+| Timer
+| -------------------------------------
+ */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.tab {
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.tab button {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    background-color: #3F51B5;
+    transition: background-color 0.3s ease;
+}
+
+.tab button:hover {
+    background-color: #2e3b85;
+}
+
+.timer {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    justify-content: space-between;
+}
+
+.buttons button {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    background-color: #5f9ea0;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #3e676b;
+}
+
+#time {
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 3px;
+}
