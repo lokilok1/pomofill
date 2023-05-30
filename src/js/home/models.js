@@ -43,4 +43,11 @@ export default class HomeStore extends EventTarget {
     this.counter = this.initialDuration;
     this._save();
   }
+
+  // Switch between Pomodoro session, shortbreak and longbreak
+  changeDuration(min, sec) {
+    this.initialDuration = min * 60 + sec; // duration is in minutes and secs
+    this.counter = this.initialDuration;
+    this._save();
+  }
 }
