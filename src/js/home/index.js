@@ -1,6 +1,6 @@
 import "hacktimer";
 
-import HomeStore from "./models.js";
+import HomeStore, { TimerMode } from "./models.js";
 import TimerView from "./timerView.js";
 
 const init = () => {
@@ -11,13 +11,13 @@ const init = () => {
   timerView.$.stopButton.addEventListener("click", () => homeStore.stop());
   timerView.$.resetButton.addEventListener("click", () => homeStore.reset());
   timerView.$.pomodoroSessionButton.addEventListener("click", () =>
-    homeStore.setMode("pomodoro")
+    homeStore.setMode(TimerMode.pomodoro)
   );
   timerView.$.longBreakButton.addEventListener("click", () =>
-    homeStore.setMode("long-break")
+    homeStore.setMode(TimerMode.longBreak)
   );
   timerView.$.shortBreakButton.addEventListener("click", () =>
-    homeStore.setMode("short-break")
+    homeStore.setMode(TimerMode.shortBreak)
   );
   homeStore.addEventListener("save", () => {
     timerView.render(homeStore.counter);

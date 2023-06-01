@@ -1,5 +1,11 @@
 import { defaultConfig } from "../shared/config.js";
 
+export const TimerMode = {
+  pomodoro: "pomodoro",
+  longBreak: "long-break",
+  shortBreak: "short-break",
+};
+
 export default class HomeStore extends EventTarget {
   #timerId = null;
   #config;
@@ -8,17 +14,17 @@ export default class HomeStore extends EventTarget {
   constructor() {
     super();
     this.#config = defaultConfig;
-    this.#currentMode = "pomodoro"; // TODO: try to fetch config from local storage first
+    this.#currentMode = TimerMode.pomodoro; // TODO: try to fetch config from local storage first
     this.reset();
   }
 
   #getInitialDuration() {
     switch (this.#currentMode) {
-      case "pomodoro":
+      case TimerMode.pomodoro:
         return this.#config.pomodoroDuration;
-      case "short-break":
+      case TimerMode.shortBreak:
         return this.#config.shortBreakDuration;
-      case "long-break":
+      case TimerMode.longBreak:
         return this.#config.longBreakDuration;
       default:
         throw new Error("invalid timer modd");
