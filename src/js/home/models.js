@@ -1,11 +1,26 @@
-import { DEFAULT_MIN, DEFAULT_SEC } from "../shared/config";
+import { defaultConfig } from "../shared/config.js";
 
 export default class HomeStore extends EventTarget {
   constructor() {
     super();
-    this.initialDuration = DEFAULT_MIN * 60 + DEFAULT_SEC;
-    this.counter = this.initialDuration;
     this.timerId = null;
+    this.currentMode = "pomodoro";
+    // TODO: try to fetch config from local storage first
+    this.config = defaultConfig;
+    this.reset();
+  }
+
+  _getInitialDuration() {
+    switch (this.currentMode) {
+      case "pomodoro":
+        return this.config.pomodoroDuration;
+      case "short-break":
+        return this.config.shortBreakDuration;
+      case "long-break":
+        return this.config.longBreakDuration;
+      default:
+        throw new Error("invalid timer modd");
+    }
   }
 
   _save() {
@@ -40,14 +55,15 @@ export default class HomeStore extends EventTarget {
 
   reset() {
     this.stop();
-    this.counter = this.initialDuration;
+    this.counter = this._getInitialDuration();
     this._save();
   }
 
-  // Switch between Pomodoro session, shortbreak and longbreak
-  changeDuration(min, sec) {
-    this.initialDuration = min * 60 + sec; // duration is in minutes and secs
-    this.counter = this.initialDuration;
-    this._save();
+  setMode(mode) {
+    if (this.currentMode == mode) {
+      return;
+    }
+    this.currentMode = mode;
+    this.reset();
   }
 }

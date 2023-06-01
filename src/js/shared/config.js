@@ -1,2 +1,5 @@
-export const DEFAULT_MIN = 25;
-export const DEFAULT_SEC = 0;
+export const defaultConfig = {
+  pomodoroDuration: 25 * 60,
+  shortBreakDuration: 5 * 60,
+  longBreakDuration: 10 * 60,
+};

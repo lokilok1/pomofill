@@ -10,17 +10,14 @@ const init = () => {
   timerView.$.startButton.addEventListener("click", () => homeStore.start());
   timerView.$.stopButton.addEventListener("click", () => homeStore.stop());
   timerView.$.resetButton.addEventListener("click", () => homeStore.reset());
-  timerView.$.pomodoroSessionButton.addEventListener(
-    "click",
-    () => homeStore.changeDuration(25, 0), // set to 25 min for pomodoro session
+  timerView.$.pomodoroSessionButton.addEventListener("click", () =>
+    homeStore.setMode("pomodoro")
   );
-  timerView.$.longBreakButton.addEventListener(
-    "click",
-    () => homeStore.changeDuration(10, 0), // set to 25 min for pomodoro session
+  timerView.$.longBreakButton.addEventListener("click", () =>
+    homeStore.setMode("long-break")
   );
-  timerView.$.shortBreakButton.addEventListener(
-    "click",
-    () => homeStore.changeDuration(5, 0), // set to 5 min for short break
+  timerView.$.shortBreakButton.addEventListener("click", () =>
+    homeStore.setMode("short-break")
   );
   homeStore.addEventListener("save", () => {
     timerView.render(homeStore.counter);
